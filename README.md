@@ -7,7 +7,7 @@ This is the Palnagotchi program with some customizations I made for myself to ti
 Some of the changes include:
 - Make it compile on VSCode's Platform IO exension
 - Make it run on my M5Cardputer
-- Made it compatible with M5Stick C Plus 2
+- Make it run on my M5Stick C Plus 2
 - Fixes and library updates
 - Change mood more frequently
 - New moods
