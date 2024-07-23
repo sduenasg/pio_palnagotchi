@@ -9,7 +9,7 @@ Some of the changes include:
 - Make it run on my M5Cardputer
 - Fixes and library updates
 - Change mood more frequently
-- New mood
+- New moods
 
 Ideas to implement:
 - Make it work on my M5 SickC Plus 2
