@@ -1,4 +1,4 @@
-![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwns.jpg?raw=true)
+![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwnys.jpg?raw=true)
 
 # PIO Palnagotchi for M5 Cardputer
 
