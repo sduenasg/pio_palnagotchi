@@ -28,27 +28,10 @@ void initM5() {
 void setup() {
 
     initM5();
-    //auto cfg = M5.config();
-    //M5Cardputer.begin(cfg);
-    //M5Cardputer.Keyboard.begin();
-
-
-    M5.Display.setRotation(1);
-    M5.Display.setTextColor(BLUE);
-    M5.Display.setTextDatum(middle_center);
-    M5.Display.setTextSize(8);
-    M5.Display.setFont(&fonts::Font0);
-    ////M5Cardputer.Display.setFont(&fonts::Orbitron_Light_32);
-
-    M5.Display.drawString("Meow Test",
-                                  M5Cardputer.Display.width() / 2,
-                                  M5Cardputer.Display.height() / 2);
 
     Serial.begin(115200);
     Serial.println("M5Stack Cardputer Initialized");
 
-
-    
     initPwngrid();
     initUi();
     state = STATE_INIT;
@@ -58,10 +41,6 @@ void loop() {
     M5.update();
     M5Cardputer.update();
     
-    //M5Cardputer.Display.clear();
-    //M5Cardputer.Display.drawString("^w^",
-    //                               M5Cardputer.Display.width() / 2,
-    //                               M5Cardputer.Display.height() / 2);
     //delay(2000);
     //M5Cardputer.Display.clear();
     //Serial.println("M5Stack Cardputer Initialized");
@@ -69,14 +48,7 @@ void loop() {
     //                               M5Cardputer.Display.width() / 2,
     //                               M5Cardputer.Display.height() / 2);
     //delay(2000);
-    //
-    //M5Cardputer.Display.clear();
-    //Serial.println("M5Stack Cardputer Initialized");
-    //M5Cardputer.Display.drawString(String(state),
-    //                               M5Cardputer.Display.width() / 2,
-    //                               M5Cardputer.Display.height() / 2);
-    //delay(2000);
-
+  
     if (state == STATE_HALT) {
       return;
     }
@@ -108,8 +80,9 @@ void wakeUp() {
 
 void advertise(uint8_t channel) {
   uint32_t elapsed = millis() - last_mood_switch;
-  if (elapsed > 50000) {
-    setMood(random(2, 21));
+  if (elapsed > 8000) {
+    setMood(random(2, getNumberOfMoods() - 1)); //random mood
+    //setMood((getCurrentMoodId()+1) % getNumberOfMoods()); //sequential moods for testing
     last_mood_switch = millis();
   }
 

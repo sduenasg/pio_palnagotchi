@@ -22,45 +22,45 @@ const String palnagotchi_moods[] = {
     "(T_T )",  // 17 - sad
     "(;__;)",  // 18 - lonely
     "(X__X)",  // 19 - broken
-    "(#__#)",  // 20 - debugging,
-    "(UwU)",   // 21 - easter egg
-    "( ◕‿◕)",  // tests
-    "(◕‿◕ )",  // tests
-    "(UwU)",   // tests
-    "(^‿‿^)",
+    "(#__#)",  // 20 - debugging
+    "(-_-')",   // 21 - angry
+    "(^__^)",  // 22- helping
 };
 
 const String palnagotchi_moods_desc[] = {
     "Zzzz...",                               // 0 - sleeping
     "...",                                   // 1 - awakening
-    "Let's MAKE FRENS!",                   // 2 - awake
-    "WANTED: FRENS",                       // 3 - observing (neutral) right
-    "WANTED: FRENS",                       // 4 - observig (neutral) left
-    "Can we have even more frens?",        // 5 - observing (happy) right
-    "Can we have even more frens?",        // 6 - observing (happy) left
+    "Let's MAKE FRENS!",                     // 2 - awake
+    "WANTED: FRENS",                         // 3 - observing (neutral) right
+    "WANTED: FRENS",                         // 4 - observig (neutral) left
+    "Looking for frens that pwn.",           // 5 - observing (happy) right
+    "Looking for frens that pwn.",           // 6 - observing (happy) left
     "YEAH! So many pwnagotchis!",            // 7 - intense
     "The coolest pal in the neighbourhood",  // 8 - cool
-    "Can we have even more frens?",        // 9 - happy
+    "Can we have even more frens?",          // 9 - happy
     "I LOVE PWNAGOTCHIS!",                   // 10 - grateful
-    "That's how I like it.",                 // 11 - excited
+    "When I grow up, I'll PWN myself!!",                             // 11 - excited
     "3.1415926535897932384626433832795",     // 12 - smart
-    "HEY YOU! LETS BE FRENS!",             // 13 - friendly
-    "IT RUNS! PWND!",               // 14 - motivated
-    "I don't PWN, therefore i don't exist.",                // 15 - demotivated
+    "HEY YOU! LETS BE FRENS!",               // 13 - friendly
+    "IT RUNS! PWND!",                        // 14 - motivated
+    "I don't PWN, therefore i don't am.",    // 15 - demotivated
     "Seriously, let's go for a walk...",     // 16 - bored
-    "Get your hands off me...",              // 17 - sad
+    "Really? This hardware? can't PWN...",              // 17 - sad
     "Where are all the Pwnagotchis?",        // 18 - lonely
     "It works on my end.",                   // 19 - broken
-    "Wtf? I didn't even touch it...",        // 20 - debugging,
-    "What?",                                 // 21 - ultra random easter egg
+    "My frens pwn.",                         // 20 - debugging
+    "SO ANGERY, BUT CANT PWN",               // 21 - angry
+    "Helping Pwnagotchis be sane since 2024",
 };
 
 uint8_t current_mood = 0;
 String current_phrase = "";
 String current_face = "";
 bool current_broken = false;
+const int number_of_moods = 23; //sizeof(palnagotchi_moods); 
 
 uint8_t getCurrentMoodId() { return current_mood; }
+int getNumberOfMoods() { return number_of_moods; }
 String getCurrentMoodFace() { return current_face; }
 String getCurrentMoodPhrase() { return current_phrase; }
 bool isCurrentMoodBroken() { return current_broken; }

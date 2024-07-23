@@ -64,13 +64,13 @@ void initUi() {
 bool keyboard_changed = false;
 
 bool toggleMenuBtnPressed() {
-  return M5Cardputer.BtnA.isPressed() ||
+  return M5.BtnA.isPressed() ||
          (keyboard_changed && (M5Cardputer.Keyboard.isKeyPressed('m') ||
                                M5Cardputer.Keyboard.isKeyPressed('`')));
 }
 
 bool isOkPressed() {
-  return M5Cardputer.BtnA.isPressed() ||
+  return M5.BtnA.isPressed() ||
          (keyboard_changed && M5Cardputer.Keyboard.isKeyPressed(KEY_ENTER));
 }
 
@@ -87,16 +87,17 @@ bool isPrevPressed() {
 void updateUi(bool show_toolbars) {
   keyboard_changed = M5Cardputer.Keyboard.isChange();
 
-  //if (toggleMenuBtnPressed()) {
-  //  // If menu is open, return to main menu
-  //  // If not, toggle menu
-  //  if (menu_open == true && menu_current_cmd != 0) {
-  //    menu_current_cmd = 0;
-  //    menu_current_opt = 0;
-  //  } else {
-  //    menu_open = !menu_open;
-  //  }
-  //}
+  // TODO this was crashing m5cardputer and made it bootloop, check it
+  if (toggleMenuBtnPressed()) {
+    // If menu is open, return to main menu
+    // If not, toggle menu
+    if (menu_open == true && menu_current_cmd != 0) {
+      menu_current_cmd = 0;
+      menu_current_opt = 0;
+    } else {
+      menu_open = !menu_open;
+    }
+  }
 
   uint8_t mood_id = getCurrentMoodId();
   String mood_face = getCurrentMoodFace();

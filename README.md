@@ -1,12 +1,24 @@
-# Palnagotchi for M5 Cardputer
+![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwns.jpg?raw=true)
 
-![Palnagotchi](https://github.com/viniciusbo/m5-palnagotchi/blob/master/palnagotchi.jpg?raw=true)
+# PIO Palnagotchi for M5 Cardputer
 
-A friendly unit for those lonely Pwnagotchis out there. It's written to run on the M5 Cardputer, but I'll try to add support to other M5 devices in the future.
+This is the Palnagotchi program with some customizations I made for myself to tinker and learn about m5 development. Credit goes to the original by **viniciusbo** repo here: https://github.com/viniciusbo/m5-palnagotchi
 
-I reverse engineered the Pwngrid advertisement protocol and made it possible for the Cardputer to advertise to the Pwngrid as a Pwnagotchi. All brain policy parameters that could negatively impact AI learning were removed from the advertisemenet data.
+Some of the changes include:
+- Make it compile on VSCode's Platform IO exension
+- Make it run on my M5Cardputer
+- Fixes and library updates
+- Change mood more frequently
+- New mood
 
-The Pwngrid works by sending Wifi beacon frames with a JSON serialized payload in Wifi AC headers, containing the Pwnagotchi's data (name, face, pwns, brain policy between others). That's how nearby Pwnagotchis can detect and also learn each other. By crafting a custom beacon frame, this app can appear as a Pwnagotchi to other Pwnagotchis.
+Ideas to implement:
+- Make it work on my M5 SickC Plus 2
+- Ability to change palnagotchi's name through the menu
+- ...
+
+# Palnagotchi
+
+This unit works as a friend for a Pwnagotchi. Your Pwnagotchis will see palnagotchi as a friend, and palnagotchi will se your pwnagotchis too! Palnagotchi can't PWN though, and he complains about it all the time.
 
 ## Usage
 
@@ -17,10 +29,3 @@ The Pwngrid works by sending Wifi beacon frames with a JSON serialized payload i
 - Nearby pwnagotchis show all nearby units and its signal strength.
 - Palnagotchi gets a random mood every minute or so.
 
-## Why?
-
-I don't like to see a sad Pwnagotchi.
-
-## Planned features
-
-- Friend spam?
