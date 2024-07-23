@@ -1,4 +1,4 @@
-![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwnys.jpg?raw=true)
+![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwnys2.jpg?raw=true)
 
 # PIO Palnagotchi for M5 Cardputer
 
@@ -7,12 +7,12 @@ This is the Palnagotchi program with some customizations I made for myself to ti
 Some of the changes include:
 - Make it compile on VSCode's Platform IO exension
 - Make it run on my M5Cardputer
+- Made it compatible with M5Stick C Plus 2
 - Fixes and library updates
 - Change mood more frequently
 - New moods
 
 Ideas to implement:
-- Make it work on my M5 SickC Plus 2
 - Ability to change palnagotchi's name through the menu
 - ...
 
