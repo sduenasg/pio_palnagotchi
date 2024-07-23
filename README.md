@@ -1,13 +1,13 @@
 ![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwns2.jpg?raw=true)
 
-# PIO Palnagotchi for M5 Cardputer
+# PIO Palnagotchi for M5 Cardputer and M5Stick C 2 Plus
 
 This is the Palnagotchi program with some customizations I made for myself to tinker and learn about m5 development. Credit goes to the original by **viniciusbo** repo here: https://github.com/viniciusbo/m5-palnagotchi
 
 Some of the changes include:
 - Make it compile on VSCode's Platform IO exension
 - Make it run on my M5Cardputer
-- Make it run on my M5Stick C Plus 2
+- Make it run on my M5Stick C Plus 2 (haven't tested other sticks)
 - Fixes and library updates
 - Change mood more frequently
 - New moods
