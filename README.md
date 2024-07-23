@@ -11,6 +11,7 @@ Some of the changes on this version include:
 - Fixes and library updates
 - Change mood more frequently
 - New moods
+- Complains about their current hardware and not being able to PWN like a Pwnagotchi
 
 Ideas to implement:
 - Ability to change palnagotchi's name through the menu
