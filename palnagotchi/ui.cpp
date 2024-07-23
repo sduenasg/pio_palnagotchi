@@ -67,7 +67,7 @@ bool isCardputerKeyPressed(char character){
   #ifdef ARDUINO_M5Stack_StampS3
     return M5Cardputer.Keyboard.isKeyPressed(character);
   #else
-    return false
+    return false;
   #endif
 }
 
@@ -77,7 +77,7 @@ bool toggleMenuBtnPressed() {
          (keyboard_changed && (isCardputerKeyPressed('m') ||
                                isCardputerKeyPressed('`')));
   #else
-    return M5.BtnA.isPressed()
+    return M5.BtnA.isPressed();
   #endif
 }
 
@@ -86,7 +86,7 @@ bool isOkPressed() {
     return M5.BtnA.isPressed() ||
           (keyboard_changed && isCardputerKeyPressed(KEY_ENTER));
   #else
-    return M5.BtnA.isPressed()
+    return M5.BtnA.isPressed();
   #endif
 }
 
@@ -95,12 +95,16 @@ bool isNextPressed() {
     return keyboard_changed && (isCardputerKeyPressed('.') ||
                                 isCardputerKeyPressed('/') ||
                                 isCardputerKeyPressed(KEY_TAB));
+  #else
+    return false;
   #endif
 }
 bool isPrevPressed() {
   #ifdef ARDUINO_M5Stack_StampS3
     return keyboard_changed && (isCardputerKeyPressed(',') ||
                                 isCardputerKeyPressed(';'));
+  #else
+    return false;
   #endif
 }
 
