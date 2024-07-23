@@ -1,6 +1,10 @@
 
 #include <Arduino.h>
-#include "M5Cardputer.h"
+
+#ifdef ARDUINO_M5Stack_StampS3
+  #include "M5Cardputer.h"
+#endif
+
 #include "M5Unified.h"
 #include "ui.h"
 
@@ -21,8 +25,11 @@ void initM5() {
   auto cfg = M5.config();
   M5.begin();
   M5.Display.begin();
-  M5Cardputer.begin(cfg);
-  M5Cardputer.Keyboard.begin();
+
+  #ifdef ARDUINO_M5Stack_StampS3
+    M5Cardputer.begin(cfg);
+    M5Cardputer.Keyboard.begin();
+  #endif
 }
 
 void setup() {
@@ -39,8 +46,9 @@ void setup() {
 
 void loop() {
     M5.update();
-    M5Cardputer.update();
-    
+    #ifdef ARDUINO_M5Stack_StampS3
+      M5Cardputer.update();
+    #endif
     //delay(2000);
     //M5Cardputer.Display.clear();
     //Serial.println("M5Stack Cardputer Initialized");
@@ -99,27 +107,3 @@ void advertise(uint8_t channel) {
     state = STATE_HALT;
   }
 }
-
-//void loop() {
-//  M5.update();
-//  M5Cardputer.update();
-//
-//  if (state == STATE_HALT) {
-//    return;
-//  }
-//
-//  if (state == STATE_INIT) {
-//    wakeUp();
-//    state = STATE_WAKE;
-//  }
-//
-//  if (state == STATE_WAKE) {
-//    checkPwngridGoneFriends();
-//    advertise(current_channel++);
-//    if (current_channel == 15) {
-//      current_channel = 1;
-//    }
-//  }
-//
-//  updateUi(true);
-//}

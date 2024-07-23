@@ -63,29 +63,51 @@ void initUi() {
 
 bool keyboard_changed = false;
 
+bool isCardputerKeyPressed(char character){
+  #ifdef ARDUINO_M5Stack_StampS3
+    return M5Cardputer.Keyboard.isKeyPressed(character);
+  #else
+    return false
+  #endif
+}
+
 bool toggleMenuBtnPressed() {
-  return M5.BtnA.isPressed() ||
-         (keyboard_changed && (M5Cardputer.Keyboard.isKeyPressed('m') ||
-                               M5Cardputer.Keyboard.isKeyPressed('`')));
+  #ifdef ARDUINO_M5Stack_StampS3
+    return M5.BtnA.isPressed() ||
+         (keyboard_changed && (isCardputerKeyPressed('m') ||
+                               isCardputerKeyPressed('`')));
+  #else
+    return M5.BtnA.isPressed()
+  #endif
 }
 
 bool isOkPressed() {
-  return M5.BtnA.isPressed() ||
-         (keyboard_changed && M5Cardputer.Keyboard.isKeyPressed(KEY_ENTER));
+  #ifdef ARDUINO_M5Stack_StampS3
+    return M5.BtnA.isPressed() ||
+          (keyboard_changed && isCardputerKeyPressed(KEY_ENTER));
+  #else
+    return M5.BtnA.isPressed()
+  #endif
 }
 
 bool isNextPressed() {
-  return keyboard_changed && (M5Cardputer.Keyboard.isKeyPressed('.') ||
-                              M5Cardputer.Keyboard.isKeyPressed('/') ||
-                              M5Cardputer.Keyboard.isKeyPressed(KEY_TAB));
+  #ifdef ARDUINO_M5Stack_StampS3
+    return keyboard_changed && (isCardputerKeyPressed('.') ||
+                                isCardputerKeyPressed('/') ||
+                                isCardputerKeyPressed(KEY_TAB));
+  #endif
 }
 bool isPrevPressed() {
-  return keyboard_changed && (M5Cardputer.Keyboard.isKeyPressed(',') ||
-                              M5Cardputer.Keyboard.isKeyPressed(';'));
+  #ifdef ARDUINO_M5Stack_StampS3
+    return keyboard_changed && (isCardputerKeyPressed(',') ||
+                                isCardputerKeyPressed(';'));
+  #endif
 }
 
 void updateUi(bool show_toolbars) {
-  keyboard_changed = M5Cardputer.Keyboard.isChange();
+  #ifdef ARDUINO_M5Stack_StampS3
+    keyboard_changed = M5Cardputer.Keyboard.isChange();
+  #endif
 
   // TODO this was crashing m5cardputer and made it bootloop, check it
   if (toggleMenuBtnPressed()) {
