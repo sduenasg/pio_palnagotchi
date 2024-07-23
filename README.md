@@ -1,5 +1,4 @@
-![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwns2.jpg?raw=true)
-
+![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/palstick.gif?raw=true)
 # PIO Palnagotchi for M5 Cardputer and M5Stick C 2 Plus
 
 This is the Palnagotchi program with some customizations I made for myself to tinker and learn about m5 development. Credit goes to the original Palnagotchi by **viniciusbo**, repo here: https://github.com/viniciusbo/m5-palnagotchi
@@ -30,3 +29,4 @@ This unit works as a friend for a Pwnagotchi. Your Pwnagotchis will see palnagot
 - Nearby pwnagotchis show all nearby units and its signal strength.
 - Palnagotchi randomly changes mood.
 
+![Palnagotchi](https://github.com/sduenasg/pio_palnagotchi/blob/main/pwns2.jpg?raw=true)
