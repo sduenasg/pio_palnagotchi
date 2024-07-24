@@ -61,7 +61,21 @@ void initUi() {
   canvas_main.createSprite(display_w, canvas_h);
 }
 
-bool keyboard_changed = false;
+
+// INPUT MANAGEMENT
+/// List of available buttons:
+/*
+  M5Stack BASIC/GRAY/GO/FIRE:  BtnA,BtnB,BtnC
+  M5Stack Core2:               BtnA,BtnB,BtnC,BtnPWR
+  M5Stick C/CPlus:             BtnA,BtnB,     BtnPWR
+  M5Stick CoreInk:             BtnA,BtnB,BtnC,BtnPWR,BtnEXT
+  M5Paper:                     BtnA,BtnB,BtnC
+  M5Station:                   BtnA,BtnB,BtnC,BtnPWR
+  M5Tough:                                    BtnPWR
+  M5Atom M5AtomU:              BtnA
+  M5Stamp Pico/C3/C3U:         BtnA
+*/
+bool keyboard_changed = false; //Cardputer KB
 
 bool isCardputerKeyPressed(char character){
   #ifdef ARDUINO_M5Stack_StampS3
