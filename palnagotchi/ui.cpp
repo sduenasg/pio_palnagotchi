@@ -41,7 +41,7 @@ uint8_t menu_current_opt = 0;
 
 void initUi() {
   M5.Display.setRotation(1);
-  M5.Display.setTextFont(&fonts::Font0);
+  M5.Display.setFont(&fonts::Font0);
   M5.Display.setTextSize(1);
   M5.Display.fillScreen(TFT_BLACK);
   M5.Display.setTextColor(GREEN);
