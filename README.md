@@ -20,8 +20,19 @@ Ideas to implement:
 
 This unit works as a friend for a Pwnagotchi. Your Pwnagotchis will see palnagotchi as a friend, and palnagotchi will se your pwnagotchis too! Palnagotchi can't PWN though, and he complains about it all the time.
 
-## Usage
+## Environment setup
 
+For the M5Stick C, the firmware needs to be flashed with ESPTOOL 4.5.1, 4.7 for some reason doesn't work (the one M5Burner uses). I'm investigating this.
+
+- Install VScode
+- Install platformIO extension
+- Pick your environment before compiling (m5stick or cardputer, which is stamps3)
+- Compile the code pressing the ✔ icon on the bottom
+- Make sure you have access to the device's port. In my case it's ttyACM0
+- Upload it by pressing → on the bottom of vscode
+- If you need firmware.bin, it'is in the .pio/build folder
+
+## Usage
 - Run the app to start advertisement.
 - On M5Cardputer: ESC or m toggles the menu. Use arrow keys or tab to navigate and OK to select option. Esc or m to go back to main menu.
 - Top bar shows UPS level and uptime.

@@ -36,8 +36,8 @@ void setup() {
 
     initM5();
 
-    Serial.begin(115200);
-    Serial.println("M5Stack Initialized");
+    //Serial.begin(115200);
+    //Serial.println("M5Stack Initialized");
 
     initPwngrid();
     initUi();
